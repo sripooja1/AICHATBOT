@@ -1,0 +1,558 @@
+/* Reset + Base */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Inter', sans-serif; line-height: 1.6; color: #111827; background: #fff; }
+img { max-width: 100%; display: block; }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+/* Typography */
+h1 { font-size: 3rem; margin-bottom: 1rem; }
+h2 { font-size: 2rem; margin-bottom: 1rem; text-align: center; }
+h3 { font-size: 1.25rem; margin: 0.5rem 0; }
+p { margin-bottom: 1rem; color: #374151; }
+
+/* Buttons */
+.btn-primary, .btn-outline {
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+.btn-primary { background: #5B21B6; color: #fff; }
+.btn-primary:hover { background: #4C1D95; }
+.btn-outline { border: 2px solid #5B21B6; color: #5B21B6; }
+.btn-outline:hover { background: #5B21B6; color: #fff; }
+.btn-group { display: flex; gap: 1rem; }
+
+/* Header */
+header { background: #fff; border-bottom: 1px solid #eee; }
+.nav { display: flex; justify-content: space-between; align-items: center; height: 80px; }
+.nav ul { display: flex; gap: 1.5rem; list-style: none; }
+.nav a { text-decoration: none; color: #111827; }
+
+/* Hero */
+.hero {
+  background-image: url("images/Background-bot.jpg"); /* your image */
+  background-size: cover;          /* fill entire section */
+  background-position: center bottom; /* anchor bottom so chatbot shows fully */
+  background-repeat: no-repeat;    /* no tiling */
+  min-height: 100vh;               /* full screen height */
+  
+  padding: 4rem 2rem;              /* keep your padding */
+  display: flex;
+  align-items: center;
+}
+
+.hero-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+}
+
+.hero-content .text {
+  flex: 1;
+}
+
+.hero-content .hero-img {
+  flex: 1;
+}
+
+
+
+/* Sections */
+section { padding: 4rem 0; }
+.features .grid-3, .how-it-works .grid-3, .pricing .grid-3 {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;
+}
+.card, .step, .price-card {
+  background: #f9fafb; padding: 2rem; border-radius: 12px; text-align: center;
+}
+
+/* Pricing Section */
+.pricing {
+  padding: 4rem 0;
+  background: url("images/Background.jpg") no-repeat center center/cover;
+  /* fallback solid color */
+  background-color: #f9fafb;
+  text-align: center;
+}
+
+
+.pricing .section-subtitle {
+  color: #6B7280;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.pricing h2 {
+  font-size: 2rem;
+  margin-bottom: 3rem;
+}
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  align-items: stretch;
+}
+
+.price-card {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.price-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.price-card .price {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #5B21B6;
+  margin: 0.5rem 0 1rem;
+}
+
+.price-card .price span {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #6B7280;
+}
+
+.price-card .plan-desc {
+  font-size: 0.95rem;
+  color: #6B7280;
+  margin-bottom: 1.5rem;
+}
+
+.price-card .features p {
+  margin: 0.3rem 0;
+  font-size: 0.95rem;
+  color: #374151;
+}
+
+/* Highlight the popular plan */
+.price-card.popular {
+  border: 2px solid #5B21B6;
+  transform: scale(1.05);
+}
+
+/* FAQ Section */
+.faq {
+  padding: 4rem 0;
+  background: url("images/Background.jpg") no-repeat center center/cover; 
+  text-align: center;
+  font-family: Arial, sans-serif;
+  position: relative;
+  z-index: 1;
+}
+
+.faq::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.85); /* white overlay for readability */
+  z-index: -1;
+}
+
+.faq-title {
+  font-size: 2.5rem;   /* big font */
+  font-weight: 700;
+  margin-bottom: 3rem;
+  color: #111827;
+  text-align: center;  /* center align */
+}
+
+/* FAQ Items */
+.faq-item {
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #eee;
+  padding: 1rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;  /* questions and answers left aligned */
+  transition: background 0.3s ease;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.9); /* semi-transparent bg for contrast */
+  border-radius: 8px;
+}
+
+.faq-item:hover {
+  background: rgba(243, 244, 246, 0.9);
+}
+
+/* Question */
+.faq-item h4 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0;
+  color: #1f2937;
+}
+
+/* Answer (hidden by default, shows on hover) */
+.faq-item p {
+  display: none;
+  font-size: 1rem;
+  color: #4b5563;
+  margin-top: 0.5rem;
+}
+
+.faq-item:hover p {
+  display: block;
+}
+
+/* CTA */ 
+.cta-final {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: url("images/CTA.jpg") no-repeat center center/cover;
+  position: relative;
+  color: #fff; /* default for other text */
+}
+
+.cta-final::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.cta-final .container {
+  position: relative;
+  z-index: 2;
+}
+
+.cta-final h2 {
+  margin-bottom: 1rem;
+  color: #000; /* force black heading */
+}
+
+/* Center align buttons at final CTA */
+.center-buttons {
+  justify-content: center;
+}
+
+
+/* Footer */
+footer { background: #111827; color: #fff; padding: 2rem 0; text-align: center; }
+footer nav a { color: #9CA3AF; text-decoration: none; margin: 0 0.5rem; }
+footer nav a:hover { color: #fff; }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-content { flex-direction: column; text-align: center; }
+  .features .grid-3, .how-it-works .grid-3, .pricing .grid-3 {
+    grid-template-columns: 1fr;
+  }
+  .btn-group { flex-direction: column; }
+}
+/* Testimonials Section */
+.testimonials {
+  padding: 4rem 0;
+  background: url("images/Background.jpg") no-repeat center center / cover;
+  text-align: center;
+}
+
+.testimonials .section-subtitle {
+  color: #6B7280;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.testimonials h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* Slider layout */
+.testimonial-slider {
+  display: flex;
+  gap: 1.5rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 1rem;
+
+  /* hide scrollbar */
+  scrollbar-width: none; /* Firefox */
+}
+.testimonial-slider::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
+}
+
+.testimonial-card {
+  background: #fff; 
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  flex: 0 0 300px;   /* fixed width */
+  text-align: left;
+  scroll-snap-align: start;
+}
+
+/* Gold stars */
+.testimonial-card .stars {
+  color: #FFD700; /* shiny gold */
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+
+/* Section Styling */
+.why-choose-us {
+  text-align: center;
+  padding: 60px 20px;
+  font-family: Arial, sans-serif;
+  background: url("images/Background.jpg") no-repeat center center/cover;
+  /* fallback color if image doesn’t load */
+  background-color: #f9fbff;
+}
+
+
+.why-choose-us h2 {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 40px;
+}
+
+/* Boxes Layout */
+.boxes {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.box {
+  background: #fff;
+  border-radius: 12px;
+  padding: 25px;
+  width: 240px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease;
+}
+
+.box:hover {
+  transform: translateY(-6px);
+}
+
+.box h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #1a1a1a;
+}
+
+.box p {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.4;
+}
+
+/* Button Styling */
+.cta-btn {
+  background-color: #007bff;
+  color: #fff;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.cta-btn:hover {
+  background-color: #0056b3;
+}
+/* How It Works Section */
+.how-it-works {
+  padding: 4rem 0;
+  background-image: url("images/howitworks.jpg"); /* 🔹 replace with your image path */
+  background-size: cover;       /* make it fill the section */
+  background-position: center;  /* keep image centered */
+  background-repeat: no-repeat; /* avoid repeating */
+  position: relative;           /* for overlay if needed */
+  color: #111827;               /* ensure text stays visible */
+}
+
+
+.how-it-works-content {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end; /* keep text block on right */
+  gap: 3rem;
+}
+
+.how-img {
+  flex: 1;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.how-img img {
+  max-width: 90%;
+  border-radius: 12px;
+}
+
+.how-text {
+  flex: 1;
+  max-width: 500px;
+  text-align: left;
+  padding-left: 3rem; /* align with step text */
+}
+
+.how-text h2 {
+  text-align: left;
+  margin-bottom: 0.8rem; /* tighter space below heading */
+}
+
+/* Steps */
+.step {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 0.4rem; /* 🔹 small, consistent gap between steps */
+}
+
+.step:last-of-type {
+  margin-bottom: 0; /* no gap after last step */
+}
+
+.step-num {
+  min-width: 40px;
+  height: 40px;
+  background: #5B21B6;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1rem;
+}
+
+.step-content {
+  flex: 1;
+  text-align: left;
+}
+
+.step-content h3 {
+  margin: 0; /* remove extra margin */
+  font-size: 1.1rem;
+}
+
+.step-content p {
+  margin: 0.2rem 0 0; /* small controlled spacing under subheading */
+  font-size: 0.95rem;
+  color: #374151;
+}
+
+/* Button aligned with text column */
+.button-step {
+  margin-top: 0.6rem; /* tiny gap after step 3 */
+}
+
+.button-step .step-content {
+  margin-left: 0; /* keep aligned with heading + steps */
+}
+
+/* Features Section */
+.features {
+  padding: 4rem 2rem;
+  text-align: center;
+  background: #f9fafb;
+}
+
+/* Small label */
+.features-label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #0dc3db;
+  margin-bottom: 0.3rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Big heading */
+.features-heading {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 2.5rem;
+  line-height: 1.3;
+}
+
+/* Features grid */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* ✅ three columns */
+  gap: 2rem;
+}
+
+/* Feature box */
+.feature-box {
+  position: relative;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* content stays at top */
+  align-items: flex-start;
+  min-height: 280px;
+
+  background-size: cover;       /* ✅ background fills whole box */
+  background-position: center;  /* center image */
+  background-repeat: no-repeat; /* no tiling */
+
+  color: #111827; /* text color */
+  transition: transform 0.3s ease;
+}
+
+.feature-box:hover {
+  transform: translateY(-6px);
+}
+
+/* Headings inside boxes */
+.feature-box h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #111827;
+}
+
+/* Paragraphs inside boxes */
+.feature-box p {
+  font-size: 0.95rem;
+  color: #374151;
+  line-height: 1.5;
+}
+
+/* Individual box backgrounds */
+.feature-box.box1 {
+  background-image: url("images/ConversationalAI.jpg");
+}
+
+.feature-box.box2 {
+  background-image: url("images/MultiPlatform.jpg");
+}
+
+.feature-box.box3 {
+  background-image: url("images/Analytics.jpg");
+}
